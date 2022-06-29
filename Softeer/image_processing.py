@@ -28,7 +28,6 @@ def q_function(start_point, target):
         for i in range(4):
             new_dest = [x + dx[i] , y + dy[i]]
 
-
             if new_dest[0] < 0 or new_dest[0] >= H: 
                 continue
             if new_dest[1] < 0 or new_dest[1] >= W: 
