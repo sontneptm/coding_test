@@ -1,3 +1,6 @@
+# BOJ 1931
+# 회의실 배정
+
 N = int(input())
 
 seminars = []

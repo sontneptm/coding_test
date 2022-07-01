@@ -1,4 +1,6 @@
 # BOJ 2606
+# 바이러스
+
 from collections import deque
 from collections import Counter
 

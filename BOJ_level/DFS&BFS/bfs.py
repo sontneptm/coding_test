@@ -1,3 +1,6 @@
+# BOJ 24444
+# 알고리즘 수업 - 너비 우선 탐색 1
+
 from collections import deque
 
 N, M, R = map(int, input().split())

@@ -1,3 +1,6 @@
+# BOJ 11399
+# ATM
+
 N = int(input())
 time_list = sorted(list(map(int, input().split())))
 

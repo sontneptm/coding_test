@@ -1,3 +1,6 @@
+# BOJ 11047
+# 동전0
+
 N, K = map(int, input().split())
 
 values = []

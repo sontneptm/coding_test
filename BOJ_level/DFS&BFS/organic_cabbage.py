@@ -1,4 +1,5 @@
-#BOJ 1012
+# BOJ 1012
+# 유기농 배추
 from collections import deque
 
 T = int(input())

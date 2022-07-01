@@ -1,3 +1,6 @@
+# BOJ 13305
+# 주유소
+
 N = int(input())
 distance_list = list(map(int, input().split()))
 value_list = list(map(int, input().split()))
