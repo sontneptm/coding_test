@@ -14,7 +14,7 @@ for _ in range(M):
     graph[start].append(end)
     graph[end].append(start)
 
-graph = list(map(sorted, graph))
+graph = reversed(list(map(sorted, graph)))
 
 queue.append(R)
 visited[R] = 1

@@ -1,5 +1,5 @@
-# BOJ 24479
-# 알고리즘 수업 - 깊이우선 탐색 1
+# BOJ 24479 & 24480
+# 알고리즘 수업 - 깊이우선 탐색 1 & 알고리즘 수업 - 깊이우선 탐색 2
 
 from collections import deque
 
@@ -14,7 +14,7 @@ for _ in range(M):
     graph[u].append(v)
     graph[v].append(u)
 
-def reverse_sorted(l): return list(reversed(sorted(l)))
+def reverse_sorted(l): return list(sorted(l))
 graph = list(map(reverse_sorted, graph))
 
 stack.append(R)
