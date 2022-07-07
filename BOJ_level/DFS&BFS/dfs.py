@@ -14,7 +14,7 @@ for _ in range(M):
     graph[u].append(v)
     graph[v].append(u)
 
-def reverse_sorted(l): return list(sorted(l))
+def reverse_sorted(l): return list(reversed(sorted(l)))
 graph = list(map(reverse_sorted, graph))
 
 stack.append(R)
