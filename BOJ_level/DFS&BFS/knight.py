@@ -14,14 +14,14 @@ for _ in range(N):
     target_loc = list(map(int, input().split()))
 
     knight_stack.append(start_loc)
-    table[start_loc[0]][start_loc[1]] = -1
+    table[start_loc[0]][start_loc[1]] = 0
 
     dx = [-2, -1, 1, 2, 2, 1, -1, -2]
     dy = [-1, -2, -2, -1, 1, 2, 2, 1]
 
     while knight_stack:
         y, x = knight_stack.popleft()
-        if [y, x] is target_loc : break
+        if [y,x] == target_loc : break
 
         for i in range(8):
             if (0 <= y + dy[i] < I) and (0 <= x + dx[i] < I):
@@ -35,4 +35,4 @@ for _ in range(N):
     for t in table:
         move = max(*t, move)
 
-    print("move:", move)
+    print(move)
