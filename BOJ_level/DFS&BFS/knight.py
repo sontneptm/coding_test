@@ -8,18 +8,18 @@ N = int(input())
 for _ in range(N):
     I = int(input())
     table = [[0 for _ in range(I)] for _ in range(I)]
-    knight_stack = deque()
+    knight_queue = deque()
     start_loc = list(map(int, input().split()))
     target_loc = list(map(int, input().split()))
 
-    knight_stack.append(start_loc)
+    knight_queue.append(start_loc)
 
     dx = [-2, -1, 1, 2, 2, 1, -1, -2]
     dy = [-1, -2, -2, -1, 1, 2, 2, 1]
 
     def bfs():
-        while knight_stack:
-            y, x = knight_stack.popleft()
+        while knight_queue:
+            y, x = knight_queue.popleft()
             if [y,x] == target_loc : return 0
 
             for i in range(8):
@@ -31,6 +31,6 @@ for _ in range(N):
                         table[ny][nx] = table[y][x] + 1
                         if [ny, nx] == target_loc:
                             return table[ny][nx]
-                        knight_stack.append([ny, nx])
+                        knight_queue.append([ny, nx])
 
     print(bfs())
