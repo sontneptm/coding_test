@@ -1,36 +1,40 @@
+# BOJ 16928
+# 뱀과 사다리 게임
+
 from collections import deque
 
 N, M = map(int, input().split())
 ladders = [list(map(int,input().split())) for _ in range(N)]
 snakes = [list(map(int,input().split())) for _ in range(M)]
-table = [0 for _ in range(101)]
+visited = [0 for _ in range(101)]
+graph = [[] for _ in range(101)]
 queue = deque()
+
+for i in range(1,100):
+    for j in range(1,7):
+        if i+j <= 100:
+            checker = True
+            for l in ladders:
+                if l[0] == i+j:
+                    graph[i].append(l[1])
+                    checker = False
+
+            for s in snakes:
+                if s[0] == i+j:
+                    graph[i].append(s[1])
+                    checker = False
+
+            if checker:
+                graph[i].append(i+j)
 
 queue.append(1)
 
 while queue:
     cursor = queue.popleft()
 
-    for i in range(1, 7):
-        new_cursor = cursor + i
+    for d in graph[cursor]:
+        if visited[d] == 0:
+            visited[d] = visited[cursor]+1
+            queue.append(d)
 
-        if new_cursor <= 100 and (table[new_cursor] == 0 or table[new_cursor] >= table[cursor]+1):
-
-            for l in ladders :
-                    if new_cursor == l[0]:
-                        table[new_cursor] = table[cursor] + 1
-                        table[l[1]] = table[cursor] + 1
-                        queue.append(l[1])
-                        break
-
-            for s in snakes :
-                    if new_cursor == s[0]:
-                        table[new_cursor] = table[cursor] + 1
-                        table[s[1]] = table[cursor]+1
-                        queue.append(s[1])
-                        break
-       
-            table[new_cursor] = table[cursor] + 1
-            queue.append(new_cursor)
-
-print(table[100])
+print(visited[100])
