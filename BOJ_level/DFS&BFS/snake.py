@@ -37,4 +37,4 @@ while queue:
             visited[d] = visited[cursor]+1
             queue.append(d)
 
-print(visited[100])
+print(visited)
