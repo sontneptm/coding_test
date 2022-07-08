@@ -1,5 +1,5 @@
-# BOJ 24444
-# 알고리즘 수업 - 너비 우선 탐색 1
+# BOJ 24444 & 24445
+# 알고리즘 수업 - 너비 우선 탐색 1 & 알고리즘 수업 - 너비 우선 탐색 2
 
 from collections import deque
 
@@ -14,7 +14,8 @@ for _ in range(M):
     graph[start].append(end)
     graph[end].append(start)
 
-graph = list(map(sorted, graph))
+def reverse_sorted(l): return list(reversed(sorted(l)))
+graph = list(map(reverse_sorted, graph))
 
 queue.append(R)
 visited[R] = 1
