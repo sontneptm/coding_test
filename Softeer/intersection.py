@@ -1,5 +1,4 @@
 from collections import Counter, deque
-from re import L
 
 traffic = [deque() for _ in range(4)]
 on_intersection = [1e+10 for _ in range(4)]
